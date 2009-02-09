@@ -1,6 +1,6 @@
 
 %define realname   IPC-System-Simple
-%define version    1.17
+%define version    1.18
 %define release    %mkrel 1
 
 Name:       perl-%{realname}

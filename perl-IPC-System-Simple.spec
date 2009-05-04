@@ -1,7 +1,10 @@
+# find-requires extracts too much, cf https://qa.mandriva.com/show_bug.cgi?id=47678
+# therefore, forcing explicit require skipping of Win32
+%define _requires_exceptions perl.Win32.
 
 %define realname   IPC-System-Simple
 %define version    1.18
-%define release    %mkrel 1
+%define release    %mkrel 2
 
 Name:       perl-%{realname}
 Version:    %{version}

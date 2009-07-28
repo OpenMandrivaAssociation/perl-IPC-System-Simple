@@ -1,21 +1,20 @@
+%define upstream_name    IPC-System-Simple
+%define upstream_version 1.18
+
 # find-requires extracts too much, cf https://qa.mandriva.com/show_bug.cgi?id=47678
 # therefore, forcing explicit require skipping of Win32
 %define _requires_exceptions perl.Win32.
 
-%define realname   IPC-System-Simple
-%define version    1.18
-%define release    %mkrel 2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
 Summary:    Run commands simply, with detailed diagnostics
-Source:     http://www.cpan.org/modules/by-module/IPC/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/IPC/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(Config)
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(File::Basename)
@@ -23,8 +22,8 @@ BuildRequires: perl(List::Util)
 BuildRequires: perl(Scalar::Util)
 BuildRequires: perl(Test)
 BuildRequires: perl(Test::More)
-
 BuildArch: noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Calling Perl's in-built 'system()' function is easy, determining if it was
@@ -38,7 +37,7 @@ In fact, if you want to be really lazy, you can just write:
     use IPC::System::Simple qw(system);
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -59,5 +58,4 @@ rm -rf %buildroot
 %doc Changes LICENSE README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
 

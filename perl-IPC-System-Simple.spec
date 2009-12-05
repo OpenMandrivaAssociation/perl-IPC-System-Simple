@@ -1,5 +1,5 @@
 %define upstream_name    IPC-System-Simple
-%define upstream_version 1.18
+%define upstream_version 1.19
 
 # find-requires extracts too much, cf https://qa.mandriva.com/show_bug.cgi?id=47678
 # therefore, forcing explicit require skipping of Win32

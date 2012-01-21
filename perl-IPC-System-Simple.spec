@@ -7,7 +7,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 3
 
 Summary:    Run commands simply, with detailed diagnostics
 License:    GPL+ or Artistic

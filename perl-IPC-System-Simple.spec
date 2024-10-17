@@ -15,7 +15,7 @@ Version:	%perl_convert_version %{modver}
 Release:	10
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{modname}
+Url:		https://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/modules/by-module/IPC/IPC-System-Simple-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Config)

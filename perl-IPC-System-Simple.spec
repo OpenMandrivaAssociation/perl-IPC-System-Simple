@@ -1,5 +1,5 @@
 %define modname	IPC-System-Simple
-%define modver 1.25
+%define modver 1.30
 
 # find-requires extracts too much, cf https://qa.mandriva.com/show_bug.cgi?id=47678
 # therefore, forcing explicit require skipping of Win32
@@ -11,12 +11,12 @@
 
 Summary:	Run commands simply, with detailed diagnostics
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	10
+Version:	%{modver}
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/IPC/IPC-System-Simple-%{modver}.tar.gz
+Url:		https://github.com/pjf/ipc-system-simple
+Source0:	https://cpan.metacpan.org/authors/id/J/JK/JKEENAN/IPC-System-Simple-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl(Config)
